@@ -35,6 +35,7 @@ const App = () => {
       if(min < 10){
         cTime = `${hour} : 0${min} : ${sec}`;
       }
+      setTime(cTime);
       if(sec < 10){
         cTime = `${hour} : ${min} : 0${sec}`;
       }
@@ -42,12 +43,26 @@ const App = () => {
 
     }, 1000);
 
+    // setTimeout(() => {
+    //   hour = new Date().getHours();
+    //   min = new Date().getMinutes();
+    //   sec = new Date().getSeconds();
+    //   cTime = `${hour} : ${min} : ${sec}`;
+      
+    //   if(min < 10){
+    //     cTime = `${hour} : 0${min} : ${sec}`;
+    //   }
+    //   setTime(cTime);
+
+    // }, 1000);
+
   
   
   return(
     <>  
       <div className="text-center mt-[250px] sm:hidden text-3xl">OOPs....Not Fully Responsive🥺</div>
-      <div className="bg-red-400 hidden sm:w-[650px] sm:h-[300px] md:w-[700px] md:h-[300px] lg:w-[800px] lg:h-[300px] mt-[200px] rounded-3xl sm:flex justify-center items-center shadow-xl shadow-red-900">
+      {/* <div className="w-20 h-20 absolute bg-black"></div> */}
+      <div className="bg-red-400 hidden sm:w-[650px] sm:h-[300px] md:w-[700px] md:h-[300px] lg:w-[800px] lg:h-[300px] mt-[200px] rounded-3xl sm:flex justify-center items-center shadow-xl shadow-red-900 ring-4 ring-red-800 relative">
         <div className="bg-slate-800 sm:w-[610px] sm:h-[260px] md:w-[650px] md:h-[260px] lg:w-[760px] lg:h-[265px] rounded-3xl flex justify-center items-center gap-5">
           <h1 className="font-orbitron text-[80px] lg:text-8xl text-slate-300 -ml-2 hidden sm:block">{ctime}</h1>
           <h2 className="sm:w-20 flex flex-col justify-center items-center gap-5 font-orbitron text-2xl font-bold lg:gap-6">
